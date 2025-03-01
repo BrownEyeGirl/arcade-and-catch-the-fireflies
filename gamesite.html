@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>THE ARCADE</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+  body {
+    background-color: black;
+    color: #580CFF;
+    font-family: 'Press Start 2P', cursive;
+    line-height: 1.6;
+    
+  }
+  
+  h2 {
+    color: #A1FC00;
+  }
+  
+  .bodytext {
+    text-align: center;
+
+  }
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: pink;
+    
+}
+  /* CSS for Dropdown Menu */
+  .dropbtn {
+  text-align: left;
+  background-color: black;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+  
+
+.dropdown-content a:hover {background-color: black;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: black;}
+  
+
+.w3-content{position:relative;margin-top:0em;}
+.w3-btn,.w3-button{border:none;display:inline-block;outline:0;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-btn,.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none} 
+.w3-disabled,.w3-btn:disabled,.w3-button:disabled{cursor:not-allowed;opacity:0.3}.w3-disabled *,:disabled *{pointer-events:none}
+.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+.w3-button:hover{color:#000!important;background-color:#ccc!important}
+
+.w3-content button {
+position: absolute;
+top: 32%;
+}
+
+.w3-display-right {right:0}
+.w3-display-left {left:0}
+  
+  .buttonimg {
+    color:white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 19px;
+  }
+  
+  
+  .buttonimg:hover {
+    color: black;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+  filter: grayscale(100%);
+    text-shadow: 5px 1px 0 white;	
+    font-size: 30px;
+
+
+  }  
+
+</style>
+</head>
+<body>
+  <div class="w3-content" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">
+   <img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/17d1b9e3-71d8-4696-b9e3-c6459dd2956b.image.png?v=1705961450751" alt="custom_html_banner1" style="width:100%;">
+   <img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/b06eb376-562b-4c91-a510-ceb961b2fb36.image.png?v=1705961418149" alt="custom_html_banner2" style="width:100%">
+   <img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/2827fe66-5a91-4e63-ab47-0a09ff74eca8.image.png?v=1705961430717" alt="custom_html_banner3" style="width:100%;">
+   <img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/e9cd03ab-026c-4e20-a4d4-37080bd64ec3.image.png?v=1705961439417" alt="custom_html_banner4" style="width:100%;">
+   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+  <script>
+ var slideIndex = 1;
+ showDivs(slideIndex);
+ function plusDivs(n) {
+ showDivs(slideIndex += n);
+  }
+ function showDivs(n) {
+ var i;
+ var x = document.getElementsByClassName("mySlides");
+ if (n > x.length) {slideIndex = 1} if (n < 1) {slideIndex = x.length}for
+ (i = 0; i < x.length; i++) {x[i].style.display = "none";}
+ x[slideIndex-1].style.display = "block"; }
+</script> 
+  
+  
+  <div class="dropdown">
+    <img style="width: 50px;" class="dropbtn" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqXYHiE9KFRY79N-LE-Xb7rIeS8NPdtxjeA&usqp=CAU">
+    <div class="dropdown-content">
+      <img>
+      <a href="gamesite.html"><img style="width: 50px;" src="https://thumbs.dreamstime.com/b/joystick-neon-icon-elements-web-set-simple-websites-design-mobile-app-info-graphics-dark-gradient-background-149514652.jpg"></a>
+      <a href="index.html"><img style="width: 50px;" src="https://thumbs.dreamstime.com/b/castle-blue-neon-icon-simple-thin-line-outline-vector-amusement-icons-ui-ux-website-mobile-application-dark-164868730.jpg"></a>
+      <a href="index.html"><img style="width:50px;" src="https://images.pond5.com/exit-neon-sign-text-footage-098049688_iconl.jpeg"></a>
+    </div>
+  </div>
+  <div class="bodytext">
+  <h1>
+    Welcome to the arcade!
+  </h1>
+  <h2>
+    Minigames: 
+  </h2>
+    
+  <!---<a href="games/gamesite-flappyhuan.html"><button class="buttonimg" style="width: 600px; height: 200px; background-image: url(http://24.media.tumblr.com/5e38dcf9ff357da1e7a71af04d8cf022/tumblr_n123xkYWz61qlwf8co1_500.gif);">
+    Flappy Huan
+    </button></a> -->
+    
+    <br>
+    
+  <a href="catchthefireflies.html"><button class="buttonimg" style="width: 600px; height: 200px; background-image: url(https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/DE53CB72-63E2-476E-9CF3-91514F4A44E3_1_105_c.jpeg?v=1740862389612);">
+    Catch the Fireflies 
+    </button></a>
+  </div>
+
+  </body>
+</html>
