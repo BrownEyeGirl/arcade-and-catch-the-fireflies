@@ -1,0 +1,619 @@
+<head>
+  <title> Catch the Fireflies </title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: black;
+}
+h2 {
+font-family: monospace;
+color: white;
+}
+
+h1 {
+font-family: monospace;
+color: white;
+ font-size: 70px;
+
+}
+    
+/* CSS for Dropdown Menu */
+  .dropbtn {
+  background-color: black;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+  
+
+.dropdown-content a:hover {background-color: black;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: black;}
+    
+    
+    
+.background {
+	table-layout: fixed;
+	border-spacing: 0;
+.background td;
+	padding: 0;
+  background-image: url('https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/DE53CB72-63E2-476E-9CF3-91514F4A44E3_1_105_c.jpeg?v=1740862389612');
+-webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;}
+.goo {
+  background-color: deeppink; 
+}
+.wall1 {
+	background-color: black;
+  opacity: 50%;
+  box-sizing: content-box;
+  border-radius: 5px;
+  }
+    
+.actor {
+	position: absolute;
+  background-image: url('https://lh5.googleusercontent.com/proxy/oxCp35bE11-cVMfrdMafkdfUtlbXEoutnNZQ7K5VbEJN7nDbWkTDcIRtCGDciALJalBjS4L82XTNv8XVBEtPPD7AAvSVpUuFGion7rVylk7__QE1BmqbAJY7uliWyTUWQG4i3f3UF-74XQ');
+
+}
+.coin {
+	background: blue;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow:
+    0 0 60px 20px #fff,  /* inner is white */
+    0 0 100px 40px #f0f, /* middle is magenta */
+    0 0 140px 60px #0ff; /* outer is cyan */
+}
+.player {
+	box-shadow: 5px;
+  border: 1px solid black;
+  border-radius: 25px;  
+  background-color: lavender;
+  background-image: url('https://pngimg.com/d/scoop_net_PNG21.png');
+}
+.lost .player {
+	background: deeppink;
+  border: 1px solid deeppink;
+}
+	
+.game {
+	position: relative;
+	overflow: hidden;
+}
+    
+    
+.w3-content 
+    {position:relative;margin-top:0em;}
+
+.w3-btn,.w3-button {
+  border:none;display:inline-block;
+  outline:0;
+  padding:8px 16px;
+  vertical-align:middle;
+  overflow:hidden;
+  text-decoration:none;
+  color:inherit;
+  background-color:inherit;
+  text-align:center;
+  cursor:pointer;
+  white-space:nowrap
+    }
+.w3-btn,.w3-button {
+  -webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none} 
+.w3-disabled,.w3-btn:disabled,.w3-button:disabled{cursor:not-allowed;opacity:0.3}.w3-disabled *,:disabled *{pointer-events:none}
+.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+.w3-button:hover{color:#000!important;background-color:#ccc!important}
+
+.w3-content button {
+position: absolute;
+top: 32%;
+}
+
+.w3-display-right {right:0}
+.w3-display-left {left:0}
+  </style>
+</head>
+<body>
+  <div class="w3-content" style="display: block; margin-left: auto; margin-right: auto; width: 40%;">
+    <img class="mySlides" src="https://cdn.glitch.com/f09f02ea-e865-4d56-8c02-fc45c8195543%2FScreen%20Shot%202021-03-23%20at%203.07.19%20PM.jpg?v=1616537310435" alt="custom_html_banner3" style="width:100%;">
+    <img class="mySlides" src="https://cdn.glitch.com/f09f02ea-e865-4d56-8c02-fc45c8195543%2FScreen%20Shot%202021-03-23%20at%203.07.29%20PM.jpg?v=1616537302055" alt="custom_html_banner1" style="width:100%;">
+    <img class="mySlides" src="https://cdn.glitch.com/f09f02ea-e865-4d56-8c02-fc45c8195543%2FScreen%20Shot%202021-03-23%20at%203.07.11%20PM.jpg?v=1616537323548" alt="custom_html_banner2" style="width:100%">
+   <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+   <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+  </div>
+  
+ 
+    <script>
+       var slideIndex = 1;
+       showDivs(slideIndex);
+       function plusDivs(n) {
+       showDivs(slideIndex += n);
+        }
+       function showDivs(n) {
+       var i;
+       var x = document.getElementsByClassName("mySlides");
+       if (n > x.length) {slideIndex = 1} if (n < 1) {slideIndex = x.length}for
+       (i = 0; i < x.length; i++) {x[i].style.display = "none";}
+       x[slideIndex-1].style.display = "block"; }
+</script>
+  
+  
+    <div class="dropdown">
+    <img style="width: 50px;" class="dropbtn" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqXYHiE9KFRY79N-LE-Xb7rIeS8NPdtxjeA&usqp=CAU">
+    <div class="dropdown-content">
+      <img>
+      <a href="gamesite.html"><img style="width: 50px;" src="https://thumbs.dreamstime.com/b/joystick-neon-icon-elements-web-set-simple-websites-design-mobile-app-info-graphics-dark-gradient-background-149514652.jpg"></a>
+      <a href="index.html"><img style="width: 50px;" src="https://thumbs.dreamstime.com/b/castle-blue-neon-icon-simple-thin-line-outline-vector-amusement-icons-ui-ux-website-mobile-application-dark-164868730.jpg"></a>
+      <a href="index.html"><img style="width:50px;" src="https://images.pond5.com/exit-neon-sign-text-footage-098049688_iconl.jpeg"></a>
+    </div>
+  </div>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <h1 style="font-family: 'Press Start 2P', cursive; color: #FF00A8; font-size: 40px;">
+    Catch the Fireflies 
+  </h1>
+  <h2 style="font-family: 'Press Start 2P', cursive; color: #580CFF; font-size: 10px;">
+    Try to catch all the fireflies without getting sucked into the sticky pollen! 
+  </h2>
+  <canvas >
+  </canvas>
+  <script>
+
+    var LEVEL = [
+      ["                                                                                                              ",
+       "                                                                                                              ",
+       "                                                                                                              ",
+       "                                                                                                              ",
+       "                                                                                                              ",
+       "               x x                                                                                            ",
+       "              xxxxx                                                                                           ",
+       "              xx!xx                    xxxxxxxx                xxxxxxxx                                       ",
+       "               xxx                   xx        xx            xx        xx                                     ",
+       "                x                   x            xx        xx            x                                    ",
+       "                                   x   xx     xx   x      v   xx     xx   v                                   ",
+       "                                  v   x!!x   x!!x   x    x   x!!x   x!!x   x                                  ",
+       "                                 x   x!!!!x x!!!!x   x  x   x!!!!x x!!!!x   x                                 ",
+       "                                 x   x!!!!!x!!!!!x   x  x   x!!!!!x!!!!!x   x                                 ",
+       "                                 x   x!!!!!!!!!!!x   x  x   x!!!!!!!!!!!x   x                                 ",
+       "                                 x    x!!!!!!!!!x    x  x    x!!!!!!!!!x    x                                 ",
+       "                                 x     x!!!!!!!x     x  x     x!!!!!!!x     x                                 ",
+       "            xx     xx            x      x!!!!!x      x  x      x!!!!!x      x                                 ",
+       "           x!!x   x!!x           x       x!!!x        vx        x!!!x       x                                 ",
+       "          x!!!!x x!!!!x          x        x!x                    x!x        x                                 ",
+       "          x!!!!!x!!!!!x          x         v                      v         x                                 ",
+       "          x!!!!!!!!!!!x          x         o           o                    x                                 ",
+       "           x!!!!!!!!!x           x                                o         x                                 ",
+       "    @       x!!!!!!!x            x                   xxxx                   x                                 ",
+       "             x!!!!!x             x                                          x                                 ",
+       "              x!!!x               x     xxxxxxx                xxxxxxx     x                                  ",
+       "               x!x                 x                                      x                                   ",
+       "                v                   x                                    x                                    ",
+       "                                     x                                  x                                     ",
+       "                o                     x                                v                                      ",
+       "                                       x                                                                      ",
+       "                          xxxxxxxxxxxxx x                                         o         o        o        ",
+       "                                      xxx                                                                     ",
+       "                                                                    xxxxxxxx                                  ",
+       "                              o    o    o                        xx              x x       x x      x x       ",
+       "                                                             xxxxx              xxxxx     xxxxx    xxxxx      ",
+       "            xxx   xxx                      xxx               xxxx               xx!xx     xx!xx    xx!xx      ",
+       "            x!!!!!!!x       xxxxxxxxxxxxxxxx  x              xxx                 xxx       xxx      xxx   xxxx",
+       "          xx!!!!!!!!!xx                        x             xx                   x         x        x    xxxx",
+       "          x!!!!!!!!!!!xxx                       x!!!!!!!!!!!!x                                            xxxx",
+       "  xxxxxxxx!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! x!!!!!!!!!!x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x",
+       "  x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x!!!!!!!!x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x",
+       "  x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x!!!!!!x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x",
+       "  x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! x!!!!x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x",
+       "  x!!!!!!!!!!!!!!!!!!!!!!!!!!!xxx!!!!!!!!!!!!!!!!!!!!x!!x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x",
+       "  x!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!xx!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!x",
+       "                                                                                                              "]];
+      
+      
+      
+
+    function Vector(x, y) {
+      this.x = x; this.y = y;
+    }
+
+    Vector.prototype.plus = function(other) {
+      return new Vector(this.x + other.x, this.y + other.y);
+    };
+
+    Vector.prototype.times = function(scale) {
+      return new Vector(this.x * scale, this.y * scale);
+    };
+
+  
+    // set up variables for each component
+    var pieces =  {
+      "@": Player,
+      "o": Coin,
+      "=": Goo,
+      "v": Goo
+    };
+
+    
+    function Player(pos) {
+      this.pos = pos.plus(new Vector(0, 0));
+      this.size = new Vector(1, 1);
+      this.speed = new Vector(0, 0);
+    }
+    
+    Player.prototype.type = "player";
+
+    function Goo(pos, ch) {
+      this.pos = pos;
+      this.size = new Vector(0.5, 0.5);
+      if (ch === "=")
+        this.speed = new Vector(2, 0);
+      else if (ch === 'v'){
+        this.speed = new Vector(0, 3); 		   
+        this.repeatPos = pos;
+      }
+    }
+    Goo.prototype.type = "Goo";
+
+    function Coin(pos) {
+      this.basePos = this.pos = pos;
+      this.size = new Vector(.6, .6);
+      // take a look back
+      this.wobble = 2;
+    }
+    Coin.prototype.type = "coin";
+
+    Level.prototype.isFinished = function() {
+      return this.status != null && this.finishDelay < 0;
+    };
+
+    function Level(plan) {
+      this.width = plan[0].length;
+      this.height = plan.length;
+      this.grid = [];
+      this.actors = [];
+
+      for (var y = 0; y < this.height; y++) {
+        var line = plan[y],  gridLine = [];
+        for (var x = 0; x < this.width; x++) {
+          var ch = line[x], fieldType = null;
+          var Actor = pieces[ch];
+          if (Actor)
+            this.actors.push(new Actor(new Vector(x, y), ch));
+          else if (ch === "x")
+            fieldType = "wall1";
+          else if (ch === "s")
+            fieldType = "wall2";
+          else if (ch === "!")
+            fieldType = "goo";
+          else if (ch === "v"){
+            fieldType = "goo";
+            console.log(fieldType);
+          }
+          gridLine.push(fieldType)
+        }
+        this.grid.push(gridLine);
+      }
+      this.player = this.actors.filter(function(actor) {
+        return actor.type === "player"
+      })[0];	
+      this.status = this.finishDelay = null;
+    }
+
+    function element(name, className) {
+      var elem = document.createElement(name);
+      if(className) elem.className = className;
+      return elem;
+    }
+
+    function DOMDisplay(parent, level) {
+      this.wrap = parent.appendChild(element("div", "game"));
+      this.level = level;
+
+      this.wrap.appendChild(this.drawBackground());
+      this.actorLayer = null;
+      this.drawFrame();
+    }
+
+
+    var scale = 15;
+
+
+    DOMDisplay.prototype.drawBackground = function() {
+      var table = element("table", "background");
+      table.style.width = this.level.width * scale;
+      table.style.height = this.level.height * scale;
+      this.level.grid.forEach(function(row) {
+      var rowElement = table.appendChild(element("tr"));
+        rowElement.style.height = scale;
+        row.forEach(function(type) {
+          rowElement.appendChild(element("td", type));
+        });
+      });
+      return table;
+    };
+
+    DOMDisplay.prototype.drawActors = function() {
+      var wrap = element("div");
+      this.level.actors.forEach(function(actor) {
+        var rect = wrap.appendChild(element("div", "actor " + actor.type));
+        rect.style.width = actor.size.x * scale;
+        rect.style.height = actor.size.y * scale;
+        rect.style.left = actor.pos.x * scale;
+        rect.style.top = actor.pos.y * scale;
+      });
+      return wrap;
+    }
+
+    DOMDisplay.prototype.drawFrame = function() {
+      if (this.actorLayer)
+        this.wrap.removeChild(this.actorLayer);
+      this.actorLayer = this.wrap.appendChild(this.drawActors());
+      this.wrap.className = "game " + (this.level.status || "");
+      this.scrollPlayerIntoView();
+    };
+
+
+    // clear it later
+    DOMDisplay.prototype.scrollPlayerIntoView = function() {
+      var width = this.wrap.clientWidth;
+      var height = this.wrap.clientHeight;
+      //var margin = width / 3;
+
+      // The viewport
+      var left = this.wrap.scrollLeft, right = left + width;
+      var top = this.wrap.scrollTop, bottom = top + height;
+
+      var player = this.level.player;
+      var center = player.pos.plus(player.size.times(10))
+                     .times(scale);
+
+      if (center.x < left)
+        this.wrap.scrollLeft = center.x;
+      else if (center.x > right)
+        this.wrap.scrollLeft = center.x - width;
+      if (center.y < top)
+        this.wrap.scrollTop = center.y;
+      else if (center.y > bottom)
+        this.wrap.scrollTop = center.y - height;
+    };
+
+    DOMDisplay.prototype.clear = function() {
+      this.wrap.parentNode.removeChild(this.wrap);
+    };
+
+    Level.prototype.obstacleAt = function(pos, size) {
+      var xStart = Math.floor(pos.x);
+      var xEnd = Math.ceil(pos.x + size.x);
+      var yStart = Math.floor(pos.y);
+      var yEnd = Math.ceil(pos.y + size.y);
+
+      if (xStart < 0 || xEnd > this.width || yStart < 0)
+        return "wall1";
+      if (yEnd > this.height)
+        return "goo";
+      for (var y = yStart; y < yEnd; y++) {
+        for (var x = xStart; x < xEnd; x++) {
+          var fieldType = this.grid[y][x];
+          if (fieldType) return fieldType;
+        }
+      }
+    };
+
+    Level.prototype.actorAt = function(actor) {
+      for (var i = 0; i < this.actors.length; i++) {
+        var other = this.actors[i];
+        if (other != actor &&
+            actor.pos.x + actor.size.x > other.pos.x &&
+            actor.pos.x < other.pos.x + other.size.x &&
+            actor.pos.y + actor.size.y > other.pos.y &&
+            actor.pos.y < other.pos.y + other.size.y)
+          return other;
+      }
+    };
+
+    var maxStep = 1;
+
+    Level.prototype.animate = function(step, keys) {
+      if (this.status != null)
+        this.finishDelay -= step;
+
+      while (step > 0) {
+        var thisStep = Math.min(step, maxStep);
+        this.actors.forEach(function(actor) {
+          actor.act(thisStep, this, keys);
+        }, this);
+        step -= thisStep;
+      }
+    };
+
+
+    Goo.prototype.act = function(step, level) {
+      var nextPos = this.pos.plus(this.speed.times(step));
+      if (!level.obstacleAt(nextPos, this.size))
+        this.pos = nextPos;
+      else if (this.repeatPos)
+        this.pos = this.repeatPos;
+      else
+        this.speed = this.speed.times(-1);
+    };
+
+    var wobbleSpeed = 8, wobbleDist = 0.07;
+
+    Coin.prototype.act = function(step) {
+      this.wobble += step * wobbleSpeed;
+      var wobblePos = Math.sin(this.wobble) * wobbleDist;
+      this.pos = this.basePos.plus(new Vector(0, wobblePos));
+    };
+
+
+    var playerXSpeed = 10;
+
+    Player.prototype.moveX = function(step, level, keys) {
+      this.speed.x = 0;
+      if (keys.left) this.speed.x -= playerXSpeed;
+      if (keys.right) this.speed.x += playerXSpeed;
+
+      var motion = new Vector(this.speed.x * step, 0);
+      var nextPos = this.pos.plus(motion);
+      var boundary = level.obstacleAt(nextPos, this.size);
+      if (boundary)
+        level.playerTouched(boundary);
+      else
+        this.pos = nextPos;
+    };
+
+    var gravity = 25;
+    var jumpSpeed = 18;
+
+    Player.prototype.moveY = function(step, level, keys) {
+      this.speed.y += step * gravity;
+      var motion = new Vector(0, this.speed.y * step);
+      var nextPos = this.pos.plus(motion);
+      var boundary = level.obstacleAt(nextPos, this.size);
+      if (boundary) {
+        level.playerTouched(boundary);
+        if (keys.up && this.speed.y > 0)
+          this.speed.y = -jumpSpeed;
+        else
+          this.speed.y = 0;
+      } else {
+        this.pos = nextPos;
+      }
+    };
+
+    Player.prototype.act = function(step, level, keys) {
+      this.moveX(step, level, keys);
+      this.moveY(step, level, keys);
+
+      var otherActor = level.actorAt(this);
+      if (otherActor)
+        level.playerTouched(otherActor.type, otherActor);
+
+      // dying animation
+      if (level.status == "lost") {
+        this.pos.y += step;
+        this.size.y -= step;
+      }
+    };
+
+    Level.prototype.playerTouched = function(type, actor) {
+      if (type == "goo" && this.status == null) {
+        this.status = "lost";
+        this.finishDelay = 1;
+      } else if (type == "coin") {
+        this.actors = this.actors.filter(function(other) {
+          return other != actor;
+        });
+        if (!this.actors.some(function(actor) {
+          return actor.type == "coin";
+        })) {
+          this.status = "won";
+          this.finishDelay = 1;
+        }
+      }
+    };
+    
+    
+    // establishes key presses
+    
+    var arrowCodes = {37: "left", 38: "up", 39: "right"};
+
+    function trackKeys(codes) {
+      var pressed = Object.create(null);
+      function handler(event) {
+        if (codes.hasOwnProperty(event.keyCode)) {
+          var down = event.type == "keydown";
+          pressed[codes[event.keyCode]] = down;
+          event.preventDefault();
+        }
+      }
+      
+      addEventListener("keydown", handler);
+      addEventListener("keyup", handler);
+      return pressed;
+    }
+
+    function activate(frameFunc) {
+      var lastTime = null;
+      function frame(time) {
+        var stop = false;
+        if (lastTime != null) {
+          var timeStep = Math.min(time - lastTime, 100) / 1000;
+          stop = frameFunc(timeStep) === false;
+        }
+        lastTime = time;
+        if (!stop)
+          requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    var arrows = trackKeys(arrowCodes);
+
+    
+    // starts sequence
+    function runLevel(level, Display, andThen) { // if i had more time I would add more levels so as the player progresses its like they are moving around the garden
+      var display = new Display(document.body, level);
+      activate(function(step) {
+        level.animate(step, arrows);
+        display.drawFrame(step);
+        if (level.isFinished()) {
+          display.clear();
+          if (andThen)
+            andThen(level.status);
+          return false;
+        }
+      });
+    }
+
+    function startSequence(plans, Display) {
+      function startLevel(n) {
+        
+        //var username = alert("Welcome! press OK to start game");
+        
+        runLevel(new Level(plans[n]), Display, function(status) {
+          if (status == "lost")
+            startLevel(n);
+          else if (n < plans.length - 1)
+            startLevel(n + 1);
+          else
+            alert("Win - You caught all of the fireflies!");
+        });
+      }
+      startLevel(0);
+    }
+
+    startSequence(LEVEL, DOMDisplay);
+  </script>
+</body>
