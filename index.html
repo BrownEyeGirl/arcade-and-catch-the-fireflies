@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Henny+Penny&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <title>THE ARCADE</title>
+    
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+  body {
+    background-color: black;
+    cursor: -webkit-grab; 
+    cursor: grab;
+  }
+  
+  h1 {
+    font-family: 'Press Start 2P', cursive;
+    color: #580CFF;
+  }
+  
+  
+  button {
+  }
+  
+  
+  #white-background {
+    border: 1px dotted black;
+    padding: 15px;
+    background: black;
+    color: white;
+    background-clip: border-box;
+    text-align: center;
+  }
+  
+/* CSS for Dropdown Menu */
+  .dropbtn {
+  background-color: black;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  color: white;
+}
+  
+
+.dropdown-content a:hover {background-color: black;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: black;}
+
+#enterbtn {
+  background-image: url("https://i.pinimg.com/originals/d3/a0/25/d3a0252f757a49d526d5029f73a9351b.gif");
+  background-size: cover; 
+  color: white;
+  width: 400px; 
+  height:  200px; 
+  font-size: 2rem; 
+  font-family: 'Henny Penny', cursive;
+
+  }
+    
+
+#enterbtn:hover {
+    background-color: red;
+    text-shadow: 4px 4px black;
+    background-image: none;
+
+  } 
+#enterbtn {
+  background-color: red;
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  border: none;
+  color: #FFFFFF;
+  cursor: picker;
+  display: inline-block;
+  font-family: Arial;
+  font-size: 20px;
+  padding: 30px 10px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-animation: glowing 1500ms infinite;
+  
+}
+  
+@-webkit-keyframes glowing {
+  0% { background-color: red; -webkit-box-shadow: 0 0 3px red; }
+  50% { background-color: red; -webkit-box-shadow: 0 0 40px red; }
+  100% { background-color: maroon; -webkit-box-shadow: 0 0 3px maroon; }
+}
+  
+
+  .divcenter {
+  text-align: center;   
+  margin-right: auto; 
+  padding-top: 100px;
+  
+  }
+
+.w3-content{position:relative;margin-top:0em;}
+.w3-btn,.w3-button{border:none;display:inline-block;outline:0;padding:8px 16px;vertical-align:middle;overflow:hidden;text-decoration:none;color:inherit;background-color:inherit;text-align:center;cursor:pointer;white-space:nowrap}
+.w3-btn,.w3-button{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none} 
+.w3-disabled,.w3-btn:disabled,.w3-button:disabled{cursor:not-allowed;opacity:0.3}.w3-disabled *,:disabled *{pointer-events:none}
+.w3-bar-block .w3-dropdown-hover .w3-button,.w3-bar-block .w3-dropdown-click .w3-button{width:100%;text-align:left;padding:8px 16px}
+.w3-button:hover{color:#000!important;background-color:#ccc!important}
+
+.w3-content button {
+position: absolute;
+top: 32%;
+}
+
+.w3-display-right {right:0}
+.w3-display-left {left:0}
+  
+</style>
+</head>
+<body>
+
+    <div class="w3-content" style="  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;">
+ <img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/17d1b9e3-71d8-4696-b9e3-c6459dd2956b.image.png?v=1705961450751" alt="custom_html_banner2" style="width:100%">
+<img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/e9cd03ab-026c-4e20-a4d4-37080bd64ec3.image.png?v=1705961439417" alt="custom_html_banner1" style="width:100%;">
+<img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/2827fe66-5a91-4e63-ab47-0a09ff74eca8.image.png?v=1705961430717" alt="custom_html_banner3" style="width:100%;">
+<img class="mySlides" src="https://cdn.glitch.global/f09f02ea-e865-4d56-8c02-fc45c8195543/b06eb376-562b-4c91-a510-ceb961b2fb36.image.png?v=1705961418149" alt="custom_html_banner4" style="width:100%;">
+ <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+ <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+<script>
+ var slideIndex = 1;
+ showDivs(slideIndex);
+ function plusDivs(n) {
+ showDivs(slideIndex += n);
+  }
+ function showDivs(n) {
+ var i;
+ var x = document.getElementsByClassName("mySlides");
+ if (n > x.length) {slideIndex = 1} if (n < 1) {slideIndex = x.length}for
+ (i = 0; i < x.length; i++) {x[i].style.display = "none";}
+ x[slideIndex-1].style.display = "block"; }
+</script>
+  <div class="dropdown">
+    <img style="width: 50px;" class="dropbtn" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqqXYHiE9KFRY79N-LE-Xb7rIeS8NPdtxjeA&usqp=CAU">
+    <div class="dropdown-content">
+      <img>
+      <a href="gamesite.html"><img style="width: 50px;" src="https://thumbs.dreamstime.com/b/joystick-neon-icon-elements-web-set-simple-websites-design-mobile-app-info-graphics-dark-gradient-background-149514652.jpg"></a>
+      <a href="index.html"><img style="width: 50px;" src="https://thumbs.dreamstime.com/b/castle-blue-neon-icon-simple-thin-line-outline-vector-amusement-icons-ui-ux-website-mobile-application-dark-164868730.jpg"></a>
+      <a href="index.html"><img style="width:50px;" src="https://images.pond5.com/exit-neon-sign-text-footage-098049688_iconl.jpeg"></a>
+  </div>
+
+  </div>
+<div id="white-background">
+  <img src="https://cdn.glitch.com/f09f02ea-e865-4d56-8c02-fc45c8195543%2FScreen%20Shot%202021-03-23%20at%202.45.15%20PM.jpg?v=1616535948944">
+  <h2 style="transform: rotate(90deg);">
+    -->
+  </h2>
+  </div>
+  <div class="divcenter">
+  <a href="gamesite.html"><button id="enterbtn" style="font-family: 'Press Start 2P', cursive; font-size: 25px; color: white; 
+">Enter </button></a>
+  </div>
+    </body>
+
+</html>
